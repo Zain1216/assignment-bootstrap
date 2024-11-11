@@ -1,0 +1,163 @@
+
+  <style>
+    /* Basic reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Basic styling */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: white;
+      color: black;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .nav1 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: #333;
+    }
+
+    /* Logo styling */
+    .logo img {
+      height: 40px;
+      width: auto;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 5.5rem;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .nav-links li a:hover {
+      color: #585a5b;
+    }
+
+    /* Toggle Switch Styling */
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 50px;
+      height: 24px;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: 0.4s;
+      border-radius: 24px;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 20px;
+      width: 20px;
+      left: 2px;
+      bottom: 2px;
+      background-color: white;
+      transition: 0.4s;
+      border-radius: 50%;
+    }
+
+    input:checked + .slider {
+      background-color: #2196F3;
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(26px);
+    }
+
+    /* Dark mode styling */
+    body.dark-mode {
+      background-color: #333;
+      color: white;
+    }
+
+    body.dark-mode p,
+    body.dark-mode h1,
+    body.dark-mode h2,
+    body.dark-mode h3,
+    body.dark-mode h4,
+    body.dark-mode h5,
+    body.dark-mode h6,
+    body.dark-mode ul,
+    body.dark-mode li,
+    body.dark-mode a,
+    body.dark-mode button,
+    body.dark-mode .nav-links li a {
+      color: #ddd;
+    }
+
+    /* Additional styling for button */
+    button {
+      padding: 0.5rem 1rem;
+      border: none;
+      cursor: pointer;
+      background-color: #555;
+      color: white;
+      transition: background-color 0.3s;
+    }
+
+    /* body.dark-mode button {
+      background-color: #888;
+      color: white;
+    } */
+  </style>
+</head>
+<body>
+
+<nav class="nav1">
+  <!-- Logo -->
+  <div class="logo">
+    <a href="#home"><img src="logo.png" alt="Logo"></a>
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+    <li><a href="about us.html">About us</a></li>
+  </ul>
+
+  <!-- Toggle Button -->
+  <label class="switch">
+    <input type="checkbox" id="themeToggle">
+    <span class="slider"></span>
+  </label>
+</nav>
+
+
+<!-- jQuery and Script -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+  $(document).ready(function () {
+    $('#themeToggle').change(function () {
+      $('body').toggleClass('dark-mode');
+    });
+  });
+</script>
+
